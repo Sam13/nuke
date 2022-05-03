@@ -218,6 +218,11 @@ namespace Nuke.Common.CI.TeamCity
             Write("publishArtifacts", path);
         }
 
+        public void PublishArtifacts(string sourcePath, string targetPath)
+        {
+            PublishArtifacts(string.Concat(sourcePath, "=>", targetPath));
+        }
+
         public void OpenBlock(string name, string description = null)
         {
             Write("blockOpened",
